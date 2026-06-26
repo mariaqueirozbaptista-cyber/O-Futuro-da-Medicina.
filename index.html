@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Futuro da Medicina</title>
+    <style>
+        /* --- ESTILOS CSS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            border-top: 8px solid #007bff;
+        }
+
+        h1 {
+            color: #007bff;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #6c757d;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .content-box {
+            background-color: #f8f9fa;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: left;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #495057;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>O Futuro da Medicina</h1>
+        <div class="subtitle">A Inteligência Artificial na Saúde</div>
+        
+        <div class="content-box">
+            <p id="resumo-texto">Carregando informações do projeto...</p>
+        </div>
+
+        <button id="btn-mudar">Ver Outro Resumo</button>
+    </div>
+
+    <script>
+        // Lista com os resumos que você pediu anteriormente
+        const resumos = [
+            "Este projeto analisa como a Inteligência Artificial revoluciona a saúde com diagnósticos rápidos e tratamentos personalizados. O objetivo é mostrar a tecnologia como aliada médica para salvar vidas, sem perder o foco na ética e no cuidado humano.",
+            "O projeto estuda o impacto da Inteligência Artificial na saúde, mostrando como ela ajuda médicos a realizarem diagnósticos mais rápidos e tratamentos personalizados. O objetivo é destacar a tecnologia como aliada para salvar vidas.",
+            "Este projeto estuda como a Inteligência Artificial está transformando a saúde através de diagnósticos rápidos, tratamentos personalizados e monitoramento preventivo, abordando também a importância da ética."
+        ];
+
+        let indice = 0;
+
+        // Selecionando os elementos da tela
+        const textoElemento = document.getElementById("resumo-texto");
+        const botao = document.getElementById("btn-mudar");
+
+        // Coloca o primeiro resumo na tela assim que o site abre
+        textoElemento.innerText = resumos[indice];
+
+        // Função que muda o texto quando clica no botão
+        botao.addEventListener("click", () => {
+            indice++;
+            if (indice >= resumos.length) {
+                indice = 0; // Volta para o primeiro se chegar no fim
+            }
+            textoElemento.innerText = resumos[indice];
+        });
+    </script>
+</body>
+</html>
